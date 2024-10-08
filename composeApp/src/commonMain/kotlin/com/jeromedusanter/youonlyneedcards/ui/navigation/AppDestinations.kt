@@ -38,6 +38,7 @@ sealed class AppDestinations {
             return when (route) {
                 GameList.route -> GameList.labelResId
                 GameDetails.routeWithArgs -> GameDetails.labelResId
+                GameFilter.route -> GameFilter.labelResId
                 else -> GameList.labelResId
             }
         }

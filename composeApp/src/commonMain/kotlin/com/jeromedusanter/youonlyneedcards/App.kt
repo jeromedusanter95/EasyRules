@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.windowInsetsPadding
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -57,22 +56,25 @@ fun App() {
     }
     val searchQuery by viewModel.searchQuery.collectAsState()
     val showSearchBar by viewModel.showSearchBar.collectAsState()
+    val shouldApplyFilters by viewModel.shouldApplyFilters.collectAsState()
 
     Scaffold(
         modifier = Modifier.windowInsetsPadding(WindowInsets.safeDrawing),
         topBar = {
-            if (currentDestination?.route != AppDestinations.GameFilter.route)
-                AppTopBar(
-                    title = stringResource(AppDestinations.getLabelByResId(currentDestination?.route)),
-                    showArrowBackButton = currentDestination?.route != AppDestinations.GameList.route,
-                    showActionButtons = currentDestination?.route == AppDestinations.GameList.route,
-                    searchQuery = searchQuery,
-                    onClickArrowBackButton = { navController.popBackStack() },
-                    onClearSearchQuery = viewModel::clearSearchQueryInFilters,
-                    onSearchQueryChange = viewModel::updateSearchQueryInFilters,
-                    onChangeSearchBarVisibility = viewModel::toggleShowSearchBarVisibility,
-                    showSearchBar = showSearchBar
-                )
+            AppTopBar(
+                title = stringResource(AppDestinations.getLabelByResId(currentDestination?.route)),
+                showArrowBackButton = currentDestination?.route != AppDestinations.GameList.route,
+                showSearchActionButton = currentDestination?.route == AppDestinations.GameList.route,
+                searchQuery = searchQuery,
+                onClickArrowBackButton = { navController.popBackStack() },
+                onClearSearchQuery = viewModel::clearSearchQueryInFilters,
+                onSearchQueryChange = viewModel::updateSearchQueryInFilters,
+                onChangeSearchBarVisibility = viewModel::toggleShowSearchBarVisibility,
+                showSearchBar = showSearchBar,
+                showApplyFilterActionButton = currentDestination?.route == AppDestinations.GameFilter.route,
+                shouldApplyFilters = shouldApplyFilters,
+                onToggleApplyFilter = viewModel::toggleShouldApplyFilters,
+            )
         },
         floatingActionButton = {
             if (currentDestination?.route == AppDestinations.GameList.route)

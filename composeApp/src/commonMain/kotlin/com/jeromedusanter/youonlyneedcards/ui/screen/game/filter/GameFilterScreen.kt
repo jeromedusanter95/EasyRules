@@ -27,7 +27,6 @@ fun GameFilterScreen(
             onDifficultyLevelChange = viewModel::updateDifficultyLevelInFilters,
             onClickButtonSeeGames = onClickButtonSeeGames,
             onClickButtonClearFilters = viewModel::clearFilters,
-            onToggleApplyFilter = viewModel::toggleShouldApplyFilters
         )
     }
 }

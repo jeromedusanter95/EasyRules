@@ -16,6 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.jeromedusanter.youonlyneedcards.ui.shared_components.RangeSliderWithTitle
+import com.jeromedusanter.youonlyneedcards.ui.theme.colorDarkBlue
 import easyrules.composeapp.generated.resources.Res
 import easyrules.composeapp.generated.resources.game_details_duration_title
 import org.jetbrains.compose.resources.stringResource
@@ -33,7 +34,7 @@ fun GameFilterDuration(
             fontFamily = FontFamily.Default,
             fontWeight = FontWeight.Bold,
             fontSize = 20.sp,
-            color = Color.White
+            color = colorDarkBlue
         )
         Spacer(modifier = Modifier.height(8.dp))
         DurationRangeSlider(
@@ -79,6 +80,7 @@ private fun DurationRangeSliderTitle(
                 fontStyle = FontStyle.Italic,
                 fontSize = 16.sp,
                 lineHeight = 21.sp,
+                color = colorDarkBlue
             )
         )
         Text(
@@ -89,6 +91,7 @@ private fun DurationRangeSliderTitle(
                 fontStyle = FontStyle.Italic,
                 fontSize = 16.sp,
                 lineHeight = 21.sp,
+                color = colorDarkBlue
             )
         )
         Text(
@@ -99,6 +102,7 @@ private fun DurationRangeSliderTitle(
                 fontStyle = FontStyle.Italic,
                 fontSize = 16.sp,
                 lineHeight = 21.sp,
+                color = colorDarkBlue
             )
         )
         Text(
@@ -109,6 +113,7 @@ private fun DurationRangeSliderTitle(
                 fontSize = 16.sp,
                 lineHeight = 21.sp,
                 letterSpacing = 0.sp,
+                color = colorDarkBlue
             )
         )
     }

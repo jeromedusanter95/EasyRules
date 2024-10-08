@@ -16,6 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.jeromedusanter.youonlyneedcards.ui.shared_components.SliderWithTitle
+import com.jeromedusanter.youonlyneedcards.ui.theme.colorDarkBlue
 import easyrules.composeapp.generated.resources.Res
 import easyrules.composeapp.generated.resources.game_filter_players_title
 import org.jetbrains.compose.resources.stringResource
@@ -33,7 +34,7 @@ fun GameFilterPlayersSection(
             fontFamily = FontFamily.Default,
             fontWeight = FontWeight.Bold,
             fontSize = 20.sp,
-            color = Color.White
+            color = colorDarkBlue
         )
         Spacer(modifier = Modifier.height(8.dp))
         PlayerRangeSlider(value, onValueChange, enabled)
@@ -64,6 +65,7 @@ private fun PlayerSliderTitle(
         Text(
             text = numberOfPlayersAsString,
             style = TextStyle(
+                color = colorDarkBlue,
                 fontFamily = FontFamily.Default,
                 fontWeight = FontWeight.Bold,
                 fontStyle = FontStyle.Italic,
@@ -75,6 +77,7 @@ private fun PlayerSliderTitle(
         Text(
             text = stringResource(Res.string.game_filter_players_title).toLowerCase(),
             style = TextStyle(
+                color = colorDarkBlue,
                 fontFamily = FontFamily.Default,
                 fontWeight = FontWeight.W300,
                 fontStyle = FontStyle.Italic,

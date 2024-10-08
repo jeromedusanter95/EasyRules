@@ -9,12 +9,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
+import com.jeromedusanter.youonlyneedcards.ui.theme.colorDarkBlue
 
 @Composable
 fun SliderWithTitle(
@@ -37,7 +37,7 @@ fun SliderWithTitle(
                 fontWeight = FontWeight.Medium,
                 fontSize = 12.sp,
                 lineHeight = 16.sp,
-                color = Color.White,
+                color = colorDarkBlue,
                 textAlign = TextAlign.Center
             )
         )
@@ -49,7 +49,7 @@ fun SliderWithTitle(
                 fontWeight = FontWeight.Medium,
                 fontSize = 12.sp,
                 lineHeight = 16.sp,
-                color = Color.White,
+                color = colorDarkBlue,
                 textAlign = TextAlign.Center
             )
         )
@@ -60,12 +60,12 @@ fun SliderWithTitle(
         onValueChange = { newValue -> onValueChange(newValue.toInt()) },
         valueRange = range.toFloatRange(),
         colors = SliderDefaults.colors(
-            thumbColor = Color.White,
-            activeTrackColor = Color.White,
-            inactiveTrackColor = Color(0x55FFFFFF),
-            disabledThumbColor = Color.White,
-            disabledActiveTrackColor = Color.White,
-            disabledInactiveTrackColor = Color(0x55FFFFFF)
+            thumbColor = colorDarkBlue,
+            activeTrackColor = colorDarkBlue,
+            inactiveTrackColor = colorDarkBlue.copy(alpha = 0.5f),
+            disabledThumbColor = colorDarkBlue,
+            disabledActiveTrackColor = colorDarkBlue,
+            disabledInactiveTrackColor = colorDarkBlue.copy(alpha = 0.5f)
         ),
         modifier = Modifier.fillMaxWidth()
     )

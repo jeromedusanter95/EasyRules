@@ -16,6 +16,9 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
+import com.jeromedusanter.youonlyneedcards.ui.theme.colorDarkBlue
+import com.jeromedusanter.youonlyneedcards.ui.theme.colorTransparent
+import com.jeromedusanter.youonlyneedcards.ui.theme.colorWhite
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -39,7 +42,7 @@ fun RangeSliderWithTitle(
                 fontWeight = FontWeight.Medium,
                 fontSize = 12.sp,
                 lineHeight = 16.sp,
-                color = Color.White,
+                color = colorDarkBlue,
                 textAlign = TextAlign.Center
             )
         )
@@ -51,7 +54,7 @@ fun RangeSliderWithTitle(
                 fontWeight = FontWeight.Medium,
                 fontSize = 12.sp,
                 lineHeight = 16.sp,
-                color = Color.White,
+                color = colorDarkBlue,
                 textAlign = TextAlign.Center
             )
         )
@@ -68,12 +71,16 @@ fun RangeSliderWithTitle(
         valueRange = range.toFloatRange(),
         steps = ((range.last - range.first) / 5) - 1, // Adds steps for 5-minute increments
         colors = SliderDefaults.colors(
-            thumbColor = Color.White,
-            activeTrackColor = Color.White,
-            inactiveTrackColor = Color(0x55FFFFFF),
-            disabledThumbColor = Color.White,
-            disabledActiveTrackColor = Color.White,
-            disabledInactiveTrackColor = Color(0x55FFFFFF)
+            thumbColor = colorDarkBlue,
+            activeTrackColor = colorDarkBlue,
+            inactiveTrackColor = colorDarkBlue.copy(alpha = 0.5f),
+            disabledThumbColor = colorDarkBlue,
+            disabledActiveTrackColor = colorDarkBlue,
+            disabledInactiveTrackColor = colorDarkBlue.copy(alpha = 0.5f),
+            activeTickColor = colorTransparent,
+            inactiveTickColor = colorTransparent,
+            disabledActiveTickColor = colorTransparent,
+            disabledInactiveTickColor = colorTransparent
         ),
         modifier = Modifier.fillMaxWidth()
     )
