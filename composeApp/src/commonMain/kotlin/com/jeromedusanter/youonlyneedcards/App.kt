@@ -1,6 +1,9 @@
 package com.jeromedusanter.youonlyneedcards
 
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -55,34 +58,34 @@ fun App() {
     val searchQuery by viewModel.searchQuery.collectAsState()
     val showSearchBar by viewModel.showSearchBar.collectAsState()
 
-    MaterialTheme {
-        Scaffold(
-            topBar = {
-                if (currentDestination?.route != AppDestinations.GameFilter.route)
-                    AppTopBar(
-                        title = stringResource(AppDestinations.getLabelByResId(currentDestination?.route)),
-                        showArrowBackButton = currentDestination?.route != AppDestinations.GameList.route,
-                        showActionButtons = currentDestination?.route == AppDestinations.GameList.route,
-                        searchQuery = searchQuery,
-                        onClickArrowBackButton = { navController.popBackStack() },
-                        onClearSearchQuery = viewModel::clearSearchQueryInFilters,
-                        onSearchQueryChange = viewModel::updateSearchQueryInFilters,
-                        onChangeSearchBarVisibility = viewModel::toggleShowSearchBarVisibility,
-                        showSearchBar = showSearchBar
-                    )
-            },
-            floatingActionButton = {
-                if (currentDestination?.route == AppDestinations.GameList.route)
-                    GameListFloatingActionButton(
-                        onClick = { navController.navigateSingleTopTo(AppDestinations.GameFilter.route) },
-                    )
-            }
-        ) { innerPadding ->
-            AppNavHost(
-                navController = navController,
-                modifier = Modifier.padding(innerPadding),
-                viewModel = viewModel
-            )
+    Scaffold(
+        modifier = Modifier.windowInsetsPadding(WindowInsets.safeDrawing),
+        topBar = {
+            if (currentDestination?.route != AppDestinations.GameFilter.route)
+                AppTopBar(
+                    title = stringResource(AppDestinations.getLabelByResId(currentDestination?.route)),
+                    showArrowBackButton = currentDestination?.route != AppDestinations.GameList.route,
+                    showActionButtons = currentDestination?.route == AppDestinations.GameList.route,
+                    searchQuery = searchQuery,
+                    onClickArrowBackButton = { navController.popBackStack() },
+                    onClearSearchQuery = viewModel::clearSearchQueryInFilters,
+                    onSearchQueryChange = viewModel::updateSearchQueryInFilters,
+                    onChangeSearchBarVisibility = viewModel::toggleShowSearchBarVisibility,
+                    showSearchBar = showSearchBar
+                )
+        },
+        floatingActionButton = {
+            if (currentDestination?.route == AppDestinations.GameList.route)
+                GameListFloatingActionButton(
+                    onClick = { navController.navigateSingleTopTo(AppDestinations.GameFilter.route) },
+                )
         }
+    ) { innerPadding ->
+        AppNavHost(
+            navController = navController,
+            modifier = Modifier.padding(innerPadding),
+            viewModel = viewModel
+        )
     }
+
 }
