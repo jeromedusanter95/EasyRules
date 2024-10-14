@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.intl.Locale
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
@@ -36,9 +37,11 @@ fun App() {
     val navController = rememberNavController()
     val currentBackStack by navController.currentBackStackEntryAsState()
     val currentDestination = currentBackStack?.destination
+    val locale = Locale.current.language
     val viewModel = viewModel {
+
         MainViewModel(
-            getGameListUseCase = GetGameListUseCase(),
+            getGameListUseCase = GetGameListUseCase(locale),
             gameListMapper = GameListMapper(
                 gameTagMapper = GameTagMapper()
             ),

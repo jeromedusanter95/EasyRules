@@ -1,6 +1,6 @@
 package com.jeromedusanter.youonlyneedcards.domain
 
-val thirtyOne = GameModel(
+private val thirtyOne = GameModel(
     id = 1,
     name = "31",
     tagList = listOf(GameTagModel.CARDS, GameTagModel.ELIMINATION),
@@ -32,7 +32,7 @@ val thirtyOne = GameModel(
         Chaque perdant perd 1 point sur un total de 4 points au départ. Un joueur est éliminé s'il n'a plus de points. Le dernier joueur encore en jeu avec au moins 1 point est déclaré gagnant.
     """.trimIndent()
 )
-val barbu = GameModel(
+private val barbu = GameModel(
     id = 2,
     name = "Barbu",
     tagList = listOf(GameTagModel.CARDS, GameTagModel.TRICKS),
@@ -98,7 +98,7 @@ On joue toutes les manches ensemble : il ne faut prendre ni levées, ni coeurs, 
     durationInMinutes = 45
 )
 
-val corsicaBattle = GameModel(
+private val corsicaBattle = GameModel(
     id = 3,
     name = "Bataille Corse",
     tagList = listOf(GameTagModel.CARDS, GameTagModel.ELIMINATION),
@@ -161,7 +161,7 @@ Si un joueur n'a plus de cartes il peut continuer à taper à chaque manche quan
     durationInMinutes = 30
 )
 
-val corruption = GameModel(
+private val corruption = GameModel(
     id = 4,
     name = "Corruption",
     tagList = listOf(GameTagModel.CARDS, GameTagModel.HIDDEN_IDENTITY, GameTagModel.ELIMINATION),
@@ -234,7 +234,7 @@ Si au début de son tour, un joueur cumule 10 pièces d'or ou plus, il doit obli
     difficultyLevel = GameDifficultyLevelModel.HARD
 )
 
-val president = GameModel(
+private val president = GameModel(
     id = 5,
     name = "Président",
     tagList = listOf(GameTagModel.CARDS),
@@ -294,7 +294,7 @@ val president = GameModel(
     """.trimIndent()
 )
 
-val canasta = GameModel(
+private val canasta = GameModel(
     id = 6,
     name = "Canasta",
     tagList = listOf(GameTagModel.CARDS, GameTagModel.TEAM),
@@ -331,7 +331,7 @@ val canasta = GameModel(
     """.trimIndent()
 )
 
-val spikeLady = GameModel(
+private val spikeLady = GameModel(
     id = 7,
     name = "Dame de Pique",
     tagList = listOf(GameTagModel.CARDS, GameTagModel.TRICKS),
@@ -379,7 +379,7 @@ val spikeLady = GameModel(
     """
 )
 
-val fiveThousand = GameModel(
+private val fiveThousand = GameModel(
     id = 8,
     name = "5000",
     tagList = listOf(GameTagModel.DICE),
@@ -418,7 +418,7 @@ La partie se termine lorsque l'un des joueurs atteint exactement 5000 points en 
     """
 )
 
-val solitaire = GameModel(
+private val solitaire = GameModel(
     id = 9,
     name = "Solitaire",
     tagList = listOf(GameTagModel.CARDS),
@@ -453,7 +453,7 @@ Vous gagnez la partie si vous réussissez à compléter les 4 piles de chaque co
     """
 )
 
-val elevator = GameModel(
+private val elevator = GameModel(
     id = 10,
     name = "Ascenseur",
     tagList = listOf(GameTagModel.CARDS, GameTagModel.TRICKS),
@@ -518,7 +518,7 @@ La partie se termine à la fin de la dernière manche, et le joueur avec le plus
     """.trimIndent(),
 )
 
-val tamalou = GameModel(
+private val tamalou = GameModel(
     id = 11,
     name = "Tamalou",
     tagList = listOf(GameTagModel.CARDS),
@@ -557,7 +557,7 @@ Si un joueur se trompe et tente de jeter une carte d’une autre valeur, par exe
     """.trimIndent()
 )
 
-val yahtzee = GameModel(
+private val yahtzee = GameModel(
     id = 12,
     name = "Yahtzee (ou Yam's)",
     tagList = listOf(GameTagModel.DICE),
@@ -611,7 +611,7 @@ val yahtzee = GameModel(
     """.trimIndent()
 )
 
-val kems = GameModel(
+private val kems = GameModel(
     id = 13,
     name = "Kem's",
     tagList = listOf(GameTagModel.CARDS, GameTagModel.TEAM),
@@ -637,7 +637,7 @@ val kems = GameModel(
     """.trimIndent(),
 )
 
-val nightyNine = GameModel(
+private val nightyNine = GameModel(
     id = 14,
     name = "99",
     tagList = listOf(GameTagModel.CARDS, GameTagModel.DRINKS),
@@ -677,7 +677,7 @@ val nightyNine = GameModel(
     """.trimIndent()
 )
 
-val pyramid = GameModel(
+private val pyramid = GameModel(
     id = 15,
     name = "Pyramide",
     tagList = listOf(GameTagModel.CARDS, GameTagModel.DRINKS),
@@ -717,7 +717,7 @@ val pyramid = GameModel(
     """.trimIndent()
 )
 
-val fuckTheDealer = GameModel(
+private val fuckTheDealer = GameModel(
     id = 16,
     name = "Fuck the Dealer",
     tagList = listOf(GameTagModel.CARDS, GameTagModel.DRINKS),
@@ -750,7 +750,7 @@ val fuckTheDealer = GameModel(
     """.trimIndent()
 )
 
-val shoshoi = GameModel(
+private val shoshoi = GameModel(
     id = 17,
     name = "Shoshoï",
     tagList = listOf(GameTagModel.CARDS, GameTagModel.DRINKS),
@@ -786,7 +786,7 @@ val shoshoi = GameModel(
     """.trimIndent()
 )
 
-val sevenAndHalf = GameModel(
+private val sevenAndHalf = GameModel(
     id = 18,
     name = "7.5",
     tagList = listOf(GameTagModel.CARDS, GameTagModel.DRINKS),
@@ -838,7 +838,7 @@ val sevenAndHalf = GameModel(
     """.trimIndent()
 )
 
-val threeMan = GameModel(
+private val threeMan = GameModel(
     id = 19,
     name = "Three Man",
     tagList = listOf(GameTagModel.DICE, GameTagModel.DRINKS),
@@ -871,7 +871,7 @@ val threeMan = GameModel(
     """.trimIndent()
 )
 
-val rami = GameModel(
+private val rami = GameModel(
     id = 20,
     name = "Rami",
     tagList = listOf(GameTagModel.CARDS),
@@ -909,7 +909,7 @@ val rami = GameModel(
     difficultyLevel = GameDifficultyLevelModel.MEDIUM
 )
 
-val crapette = GameModel(
+private val crapette = GameModel(
     id = 22,
     name = "Crapette",
     tagList = listOf(GameTagModel.CARDS),
@@ -974,7 +974,7 @@ Le jeu se termine lorsqu'un joueur a placé toutes ses cartes. L'adversaire ne p
     difficultyLevel = GameDifficultyLevelModel.HARD
 )
 
-val pileOfShit = GameModel(
+private val pileOfShit = GameModel(
     id = 23,
     name = "Tas de Merde",
     tagList = listOf(GameTagModel.CARDS),
@@ -1026,7 +1026,7 @@ Le joueur avec le moins de kilos de merde à la fin de la partie est déclaré v
 )
 
 
-val lousy = GameModel(
+private val lousy = GameModel(
     id = 24,
     name = "Pouilleux",
     tagList = listOf(GameTagModel.CARDS),
@@ -1053,7 +1053,7 @@ Le jeu se termine lorsque toutes les paires ont été formées et défaussées, 
     difficultyLevel = GameDifficultyLevelModel.EASY
 )
 
-val fourHundredTwentyOne = GameModel(
+private val fourHundredTwentyOne = GameModel(
     id = 26,
     name = "421",
     tagList = listOf(GameTagModel.DICE, GameTagModel.DRINKS),
@@ -1091,7 +1091,7 @@ Le joueur qui perd une manche devient le premier à lancer les dés pour la manc
     difficultyLevel = GameDifficultyLevelModel.MEDIUM,
 )
 
-val eightAmerican = GameModel(
+private val eightAmerican = GameModel(
     id = 28,
     name = "8 Américain",
     tagList = listOf(GameTagModel.CARDS),
@@ -1139,7 +1139,7 @@ La partie se termine lorsqu'un joueur totalise 500 points en cumulant des partie
     difficultyLevel = GameDifficultyLevelModel.MEDIUM
 )
 
-val gangsters = GameModel(
+private val gangsters = GameModel(
     id = 30,
     name = "Gangsters",
     tagList = listOf(GameTagModel.CARDS, GameTagModel.ELIMINATION),
@@ -1176,7 +1176,7 @@ Une fois ces étapes terminées, on recommence un nouveau tour à partir de la p
     difficultyLevel = GameDifficultyLevelModel.MEDIUM
 )
 
-val getaway = GameModel(
+private val getaway = GameModel(
     id = 31,
     name = "Getaway",
     tagList = listOf(GameTagModel.CARDS, GameTagModel.TRICKS),
@@ -1205,7 +1205,7 @@ La partie continue jusqu'à ce qu'un joueur soit le dernier à avoir encore des 
     difficultyLevel = GameDifficultyLevelModel.MEDIUM
 )
 
-val gileter = GameModel(
+private val gileter = GameModel(
     id = 32,
     name = "Gileter",
     tagList = listOf(GameTagModel.CARDS, GameTagModel.TRICKS),
@@ -1234,7 +1234,7 @@ La partie prend fin lorsqu'un joueur parvient à accumuler 21 points. Si plusieu
     difficultyLevel = GameDifficultyLevelModel.MEDIUM
 )
 
-val guess = GameModel(
+private val guess = GameModel(
     id = 33,
     name = "Guess",
     tagList = listOf(GameTagModel.NO_MATERIAL, GameTagModel.TEAM),
@@ -1275,7 +1275,7 @@ La première équipe à accumuler 20 points remporte la partie.
     difficultyLevel = GameDifficultyLevelModel.MEDIUM
 )
 
-val liar = GameModel(
+private val liar = GameModel(
     id = 34,
     name = "Menteur",
     tagList = listOf(GameTagModel.CARDS),
@@ -1305,7 +1305,7 @@ Le premier joueur à se débarrasser de toutes ses cartes gagne la partie. Cepen
     difficultyLevel = GameDifficultyLevelModel.EASY
 )
 
-val scopa = GameModel(
+private val scopa = GameModel(
     id = 35,
     name = "Scopa",
     tagList = listOf(GameTagModel.CARDS, GameTagModel.TRICKS),
@@ -1346,7 +1346,7 @@ Le jeu se termine lorsque l'un des joueurs atteint 11 points avec un écart d'au
     difficultyLevel = GameDifficultyLevelModel.MEDIUM
 )
 
-val yaniv = GameModel(
+private val yaniv = GameModel(
     id = 36,
     name = "Yaniv",
     tagList = listOf(GameTagModel.CARDS),
