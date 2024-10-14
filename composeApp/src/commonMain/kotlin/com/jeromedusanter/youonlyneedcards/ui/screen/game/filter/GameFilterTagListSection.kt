@@ -23,6 +23,8 @@ import com.jeromedusanter.youonlyneedcards.ui.screen.game.GameTagMapper
 import com.jeromedusanter.youonlyneedcards.ui.theme.colorDarkBlue
 import com.jeromedusanter.youonlyneedcards.ui.theme.colorTransparent
 import com.jeromedusanter.youonlyneedcards.ui.theme.colorWhite
+import easyrules.composeapp.generated.resources.Res
+import easyrules.composeapp.generated.resources.game_filter_tag_list_section_title
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
 
@@ -39,7 +41,7 @@ fun GameFilterTagListSection(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Types de jeux",
+            text = stringResource(Res.string.game_filter_tag_list_section_title),
             fontFamily = FontFamily.Default,
             fontWeight = FontWeight.Bold,
             fontSize = 20.sp,

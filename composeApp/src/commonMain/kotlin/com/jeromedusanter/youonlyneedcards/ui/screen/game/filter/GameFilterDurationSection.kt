@@ -19,6 +19,8 @@ import com.jeromedusanter.youonlyneedcards.ui.shared_components.RangeSliderWithT
 import com.jeromedusanter.youonlyneedcards.ui.theme.colorDarkBlue
 import easyrules.composeapp.generated.resources.Res
 import easyrules.composeapp.generated.resources.game_details_duration_title
+import easyrules.composeapp.generated.resources.game_filter_duration_section_minutes
+import easyrules.composeapp.generated.resources.game_filter_duration_section_to
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
@@ -38,21 +40,16 @@ fun GameFilterDuration(
         )
         Spacer(modifier = Modifier.height(8.dp))
         DurationRangeSlider(
-            value = value,
-            onValueChange = onValueChange,
-            enabled = enabled
+            value = value, onValueChange = onValueChange, enabled = enabled
         )
     }
 }
 
 @Composable
 private fun DurationRangeSlider(
-    value: IntRange,
-    onValueChange: (IntRange) -> Unit = {},
-    enabled: Boolean = true
+    value: IntRange, onValueChange: (IntRange) -> Unit = {}, enabled: Boolean = true
 ) {
-    RangeSliderWithTitle(
-        enabled = enabled,
+    RangeSliderWithTitle(enabled = enabled,
         range = 10..240,
         onValueChange = onValueChange,
         value = value,
@@ -61,20 +58,16 @@ private fun DurationRangeSlider(
                 startRangeAsString = value.first.toString(),
                 endRangeAsString = value.last.toString()
             )
-        }
-    )
+        })
 }
 
 @Composable
 private fun DurationRangeSliderTitle(
-    modifier: Modifier = Modifier,
-    startRangeAsString: String,
-    endRangeAsString: String
+    modifier: Modifier = Modifier, startRangeAsString: String, endRangeAsString: String
 ) {
     Row {
         Text(
-            text = startRangeAsString,
-            style = TextStyle(
+            text = startRangeAsString, style = TextStyle(
                 fontFamily = FontFamily.Default,
                 fontWeight = FontWeight.Bold,
                 fontStyle = FontStyle.Italic,
@@ -84,7 +77,7 @@ private fun DurationRangeSliderTitle(
             )
         )
         Text(
-            text = " à ",
+            text = " ${stringResource(Res.string.game_filter_duration_section_to)} ",
             style = TextStyle(
                 fontFamily = FontFamily.Default,
                 fontWeight = FontWeight.W300,
@@ -95,8 +88,7 @@ private fun DurationRangeSliderTitle(
             )
         )
         Text(
-            text = endRangeAsString,
-            style = TextStyle(
+            text = endRangeAsString, style = TextStyle(
                 fontFamily = FontFamily.Default,
                 fontWeight = FontWeight.Bold,
                 fontStyle = FontStyle.Italic,
@@ -106,7 +98,8 @@ private fun DurationRangeSliderTitle(
             )
         )
         Text(
-            text = " minutes", style = TextStyle(
+            text = " ${stringResource(Res.string.game_filter_duration_section_minutes)}",
+            style = TextStyle(
                 fontFamily = FontFamily.Default,
                 fontWeight = FontWeight.W300,
                 fontStyle = FontStyle.Italic,
