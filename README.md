@@ -1,5 +1,11 @@
 # EasyRules
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fe90cfff-2e02-4dce-ad93-1a4e4e77182c" width="30%" />
+  <img src="https://github.com/user-attachments/assets/81b0065d-c3e5-4763-878d-4f9849036f86" width="30%" />
+  <img src="https://github.com/user-attachments/assets/b968814b-0b8a-42eb-bad9-66cdb8d37c3e" width="30%" />
+</p>
+
 A Jetpack Compose Multiplatform application that provides a comprehensive collection of card and dice game rules. Never forget how to play your favorite games again!
 
 ## Overview
