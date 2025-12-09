@@ -1,10 +1,13 @@
 package com.jeromedusanter.easyrules.domain.features.game
 
-import com.jeromedusanter.easyrules.domain.ApplicationState
+import com.jeromedusanter.easyrules.data.repository.GameRepository
 
-class ApplyFilterUseCase {
+/**
+ * Use case for toggling filter application.
+ */
+class ApplyFilterUseCase(private val repository: GameRepository) {
 
     fun execute(shouldApplyFilters: Boolean) {
-        ApplicationState._shouldApplyFilter.value = shouldApplyFilters
+        repository.setShouldApplyFilter(shouldApplyFilters)
     }
 }
