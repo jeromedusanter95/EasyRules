@@ -47,6 +47,11 @@ kotlin {
             implementation(libs.navigation.compose)
             implementation(libs.jetbrains.lifecycle.viewmodel.compose)
             implementation(libs.material3)
+
+            // Koin for Dependency Injection
+            implementation(libs.koin.core)
+            implementation(libs.koin.compose)
+            implementation(libs.koin.compose.viewmodel)
         }
     }
 }

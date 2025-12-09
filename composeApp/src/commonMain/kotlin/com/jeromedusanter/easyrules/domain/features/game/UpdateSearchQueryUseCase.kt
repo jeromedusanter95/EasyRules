@@ -1,14 +1,17 @@
 package com.jeromedusanter.easyrules.domain.features.game
 
-import com.jeromedusanter.easyrules.domain.ApplicationState
+import com.jeromedusanter.easyrules.data.repository.GameRepository
 
-class UpdateSearchQueryUseCase {
+/**
+ * Use case for managing search query.
+ */
+class UpdateSearchQueryUseCase(private val repository: GameRepository) {
 
     fun updateSearchQuery(searchQuery: String) {
-        ApplicationState._searchQuery.value = searchQuery
+        repository.updateSearchQuery(searchQuery)
     }
 
     fun clearSearchQuery() {
-        ApplicationState._searchQuery.value = ""
+        repository.clearSearchQuery()
     }
 }
